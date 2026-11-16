@@ -18,6 +18,9 @@ operate it day to day.
   - **psa**: ITFlow for my MSP practice, published through a Cloudflare
     Tunnel with Cloudflare Access in front
   - **apps**: ChoreCast, an app I build
+  - **radio**: SUB/WAVE, a 24/7 radio station for the family that plays my
+    Navidrome library with an AI DJ (a free cloud LLM writes, a local voice
+    speaks)
 - **Windows desktop**: Jellyfin and Navidrome as native apps, plus WSL2 for
   Android builds
 

@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 1290" width="1800" height="1290" font-family="'JetBrains Mono', 'Cascadia Code', Consolas, ui-monospace, monospace" role="img" aria-labelledby="t d">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 1290" preserveAspectRatio="xMidYMid meet" style="background:#141614" font-family="'JetBrains Mono', 'Cascadia Code', Consolas, ui-monospace, monospace" role="img" aria-labelledby="t d">
 <title id="t">Lester's homelab network</title><desc id="d">Cloudflare and Tailscale at the edge, an ISP router and one flat LAN, a Proxmox host running a VM per role (dns, caddy, hub, psa, vault, apps) and a Windows desktop for media, with single sign-on through Pocket ID and automation through Ansible, Renovate, Gatus, Beszel and ntfy.</desc>
 <defs><pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0H0V24" fill="none" stroke="#1f241f" stroke-width="1"/></pattern><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#00ff41"/></marker></defs>
 <rect width="1800" height="1290" fill="#141614"/>

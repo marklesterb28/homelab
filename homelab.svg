@@ -1,0 +1,276 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 1290" width="1800" height="1290" font-family="'JetBrains Mono', 'Cascadia Code', Consolas, ui-monospace, monospace" role="img" aria-labelledby="t d">
+<title id="t">Lester's homelab network</title><desc id="d">Cloudflare and Tailscale at the edge, an ISP router and one flat LAN, a Proxmox host running a VM per role (dns, caddy, hub, psa, vault, apps) and a Windows desktop for media, with single sign-on through Pocket ID and automation through Ansible, Renovate, Gatus, Beszel and ntfy.</desc>
+<defs><pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0H0V24" fill="none" stroke="#1f241f" stroke-width="1"/></pattern><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#00ff41"/></marker></defs>
+<rect width="1800" height="1290" fill="#141614"/>
+<rect width="1800" height="1290" fill="url(#grid)"/>
+<text x="40" y="52" font-size="30" fill="#00ff41" font-weight="800" text-anchor="start">HOMELAB//NET</text>
+<text x="290" y="52" font-size="20" fill="#c8ffd4" font-weight="400" text-anchor="start">network diagram</text>
+<text x="40" y="76" font-size="13" fill="#9fb09f" font-weight="400" text-anchor="start">&gt; one Proxmox host, one Windows desktop, one flat LAN, Tailscale for away-from-home</text>
+<text x="1760" y="52" font-size="14" fill="#9fb09f" font-weight="400" text-anchor="end">Nov 2026</text>
+<text x="1760" y="72" font-size="11" fill="#9fb09f" font-weight="400" text-anchor="end">a VM per role · managed as code</text>
+<path d="M95 205 a38 38 0 0 1 10-74 a52 52 0 0 1 98-14 a40 40 0 0 1 70 30 a34 34 0 0 1 -6 58 z" fill="#1c1e1c" stroke="#3d453d" stroke-width="1.5"/>
+<text x="188" y="168" font-size="16" fill="#e4efe4" font-weight="700" text-anchor="middle">Internet</text>
+<text x="188" y="188" font-size="12" fill="#9fb09f" font-weight="400" text-anchor="middle">ISP fiber</text>
+<rect x="330" y="100" width="560" height="200" rx="4" fill="#232623" stroke="#ffb347" stroke-width="1.2" stroke-dasharray="6 4"/>
+<text x="346" y="128" font-size="17" fill="#ffb347" font-weight="700" text-anchor="start">Cloudflare</text>
+<text x="460" y="128" font-size="12" fill="#9fb09f" font-weight="400" text-anchor="start">DNS · registrar · edge</text>
+<text x="346" y="156" font-size="14" fill="#e4efe4" font-weight="700" text-anchor="start">buenaobra.net</text>
+<text x="346" y="178" font-size="12" fill="#e4efe4" font-weight="400" text-anchor="start">Pages: this resume site</text>
+<text x="346" y="197" font-size="12" fill="#e4efe4" font-weight="400" text-anchor="start">Email Routing → my inbox</text>
+<text x="346" y="216" font-size="12" fill="#e4efe4" font-weight="400" text-anchor="start">*.buenaobra.net → caddy,</text>
+<text x="346" y="235" font-size="12" fill="#9fb09f" font-weight="400" text-anchor="start">  reachable only over Tailscale</text>
+<text x="630" y="156" font-size="14" fill="#e4efe4" font-weight="700" text-anchor="start">PSA site</text>
+<text x="630" y="178" font-size="12" fill="#e4efe4" font-weight="400" text-anchor="start">Tunnel → psa (ITFlow)</text>
+<text x="630" y="197" font-size="12" fill="#e4efe4" font-weight="400" text-anchor="start">Access: email one-time PIN</text>
+<text x="630" y="216" font-size="12" fill="#e4efe4" font-weight="400" text-anchor="start">no open ports at home</text>
+<text x="346" y="286" font-size="11" fill="#9fb09f" font-weight="400" text-anchor="start">DNSSEC · TLS 1.2+ · Full (strict) · DMARC</text>
+<rect x="910" y="100" width="470" height="200" rx="4" fill="#232623" stroke="#5ad1ff" stroke-width="1.2" stroke-dasharray="6 4"/>
+<text x="926" y="128" font-size="17" fill="#5ad1ff" font-weight="700" text-anchor="start">Tailscale</text>
+<text x="1030" y="128" font-size="12" fill="#9fb09f" font-weight="400" text-anchor="start">WireGuard mesh · MagicDNS</text>
+<text x="926" y="156" font-size="12" fill="#e4efe4" font-weight="400" text-anchor="start">Servers are tagged; my own devices join</text>
+<text x="926" y="177" font-size="12" fill="#e4efe4" font-weight="400" text-anchor="start">Least-privilege grants, tested on every save</text>
+<text x="926" y="198" font-size="12" fill="#e4efe4" font-weight="400" text-anchor="start">Away from home: Tailscale on, then the</text>
+<text x="926" y="219" font-size="12" fill="#9fb09f" font-weight="400" text-anchor="start">  same https://*.buenaobra.net names work</text>
+<text x="926" y="240" font-size="12" fill="#e4efe4" font-weight="400" text-anchor="start">Vaultwarden is reachable only here</text>
+<rect x="1400" y="100" width="360" height="200" rx="4" fill="#232623" stroke="#3d453d" stroke-width="1.2"/>
+<text x="1416" y="128" font-size="15" fill="#c8ffd4" font-weight="700" text-anchor="start">Legend</text>
+<polyline points="1416,152 1476,152" fill="none" stroke="#00ff41" stroke-width="3" stroke-linejoin="round"/>
+<text x="1490" y="156" font-size="12" fill="#e4efe4" font-weight="400" text-anchor="start">Ethernet, 1 Gbps LAN</text>
+<polyline points="1416,180 1476,180" fill="none" stroke="#ffb347" stroke-width="2" stroke-linejoin="round" stroke-dasharray="7 5"/>
+<text x="1490" y="184" font-size="12" fill="#e4efe4" font-weight="400" text-anchor="start">Cloudflare Tunnel</text>
+<polyline points="1416,208 1476,208" fill="none" stroke="#5ad1ff" stroke-width="2" stroke-linejoin="round" stroke-dasharray="2 4"/>
+<text x="1490" y="212" font-size="12" fill="#e4efe4" font-weight="400" text-anchor="start">Tailscale (encrypted)</text>
+<rect x="1416" y="227" width="36" height="18" rx="2" fill="none" stroke="#00ff41" stroke-width="1"/>
+<text x="1422" y="240" font-size="11" fill="#00ff41" font-weight="600" text-anchor="start">SSO</text>
+<text x="1490" y="240" font-size="12" fill="#e4efe4" font-weight="400" text-anchor="start">Pocket ID passkey first</text>
+<rect x="1416" y="253" width="68" height="18" rx="2" fill="none" stroke="#5ad1ff" stroke-width="1"/>
+<text x="1422" y="266" font-size="11" fill="#5ad1ff" font-weight="600" text-anchor="start">tailnet</text>
+<text x="1490" y="266" font-size="12" fill="#e4efe4" font-weight="400" text-anchor="start">node is on Tailscale</text>
+<rect x="1416" y="277" width="60" height="18" rx="2" fill="none" stroke="#ffb347" stroke-width="1"/>
+<text x="1422" y="290" font-size="11" fill="#ffb347" font-weight="600" text-anchor="start">tunnel</text>
+<text x="1490" y="290" font-size="12" fill="#e4efe4" font-weight="400" text-anchor="start">published via Cloudflare</text>
+<rect x="120" y="330" width="420" height="64" rx="4" fill="#1c1e1c" stroke="#00ff41" stroke-width="1.2"/>
+<text x="136" y="356" font-size="15" fill="#00ff41" font-weight="700" text-anchor="start">ISP router</text>
+<text x="136" y="378" font-size="12" fill="#9fb09f" font-weight="400" text-anchor="start">gateway · DHCP reservations · one flat LAN</text>
+<polyline points="188,210 188,330" fill="none" stroke="#00ff41" stroke-width="3" stroke-linejoin="round"/>
+<polyline points="60,430 1740,430" fill="none" stroke="#00ff41" stroke-width="3" stroke-linejoin="round"/>
+<polyline points="330,394 330,430" fill="none" stroke="#00ff41" stroke-width="3" stroke-linejoin="round"/>
+<text x="1740" y="420" font-size="12" fill="#7dff9e" font-weight="400" text-anchor="end">home LAN · 1 Gbps</text>
+<rect x="40" y="470" width="1100" height="560" rx="4" fill="#171a17" stroke="#00ff41" stroke-width="1.5" stroke-dasharray="8 5"/>
+<text x="58" y="500" font-size="20" fill="#00ff41" font-weight="800" text-anchor="start">pve</text>
+<text x="110" y="500" font-size="14" fill="#e4efe4" font-weight="600" text-anchor="start">Proxmox VE</text>
+<text x="58" y="522" font-size="12" fill="#9fb09f" font-weight="400" text-anchor="start">a VM per role · Docker Compose inside · everything defined in git</text>
+<polyline points="580,430 580,470" fill="none" stroke="#00ff41" stroke-width="3" stroke-linejoin="round"/>
+<rect x="60" y="540" width="340" height="170" rx="4" fill="#1c1e1c" stroke="#3d453d" stroke-width="1.2"/>
+<rect x="60" y="540" width="4" height="170" fill="#00ff41"/>
+<text x="76" y="566" font-size="17" fill="#00ff41" font-weight="700" text-anchor="start">dns</text>
+<rect x="322" y="552" width="68" height="18" rx="2" fill="none" stroke="#5ad1ff" stroke-width="1"/>
+<text x="328" y="565" font-size="11" fill="#5ad1ff" font-weight="600" text-anchor="start">tailnet</text>
+<text x="76" y="586" font-size="12" fill="#9fb09f" font-weight="400" text-anchor="start">name resolution</text>
+<line x1="76" y1="596" x2="384" y2="596" stroke="#3d453d"/>
+<text x="76" y="618" font-size="13" fill="#00ff41" font-weight="700" text-anchor="start">›</text>
+<text x="90" y="618" font-size="13" fill="#e4efe4" font-weight="600" text-anchor="start">AdGuard Home</text>
+<text x="196" y="618" font-size="12" fill="#9fb09f" font-weight="400" text-anchor="start">DNS + ad blocking</text>
+<text x="94" y="637" font-size="12" fill="#9fb09f" font-weight="400" text-anchor="start">answers *.buenaobra.net → caddy</text>
+<text x="76" y="656" font-size="13" fill="#00ff41" font-weight="700" text-anchor="start">›</text>
+<text x="90" y="656" font-size="13" fill="#e4efe4" font-weight="600" text-anchor="start">Beszel agent</text>
+<text x="196" y="656" font-size="12" fill="#9fb09f" font-weight="400" text-anchor="start">metrics</text>
+<rect x="420" y="540" width="340" height="200" rx="4" fill="#1c1e1c" stroke="#3d453d" stroke-width="1.2"/>
+<rect x="420" y="540" width="4" height="200" fill="#00ff41"/>
+<text x="436" y="566" font-size="17" fill="#00ff41" font-weight="700" text-anchor="start">caddy</text>
+<rect x="682" y="552" width="68" height="18" rx="2" fill="none" stroke="#5ad1ff" stroke-width="1"/>
+<text x="688" y="565" font-size="11" fill="#5ad1ff" font-weight="600" text-anchor="start">tailnet</text>
+<text x="436" y="586" font-size="12" fill="#9fb09f" font-weight="400" text-anchor="start">the front door</text>
+<line x1="436" y1="596" x2="744" y2="596" stroke="#3d453d"/>
+<text x="436" y="618" font-size="13" fill="#00ff41" font-weight="700" text-anchor="start">›</text>
+<text x="450" y="618" font-size="13" fill="#e4efe4" font-weight="600" text-anchor="start">Caddy</text>
+<text x="500" y="618" font-size="12" fill="#9fb09f" font-weight="400" text-anchor="start">reverse proxy, HTTPS</text>
+<text x="454" y="637" font-size="12" fill="#9fb09f" font-weight="400" text-anchor="start">wildcard cert, Let's Encrypt DNS-01</text>
+<text x="454" y="656" font-size="12" fill="#9fb09f" font-weight="400" text-anchor="start">forward_auth → Tinyauth</text>
+<text x="454" y="675" font-size="12" fill="#9fb09f" font-weight="400" text-anchor="start">LAN + tailnet listener</text>
+<text x="436" y="694" font-size="13" fill="#00ff41" font-weight="700" text-anchor="start">›</text>
+<text x="450" y="694" font-size="13" fill="#e4efe4" font-weight="600" text-anchor="start">Beszel agent</text>
+<text x="556" y="694" font-size="12" fill="#9fb09f" font-weight="400" text-anchor="start">metrics</text>
+<rect x="780" y="540" width="340" height="250" rx="4" fill="#1c1e1c" stroke="#3d453d" stroke-width="1.2"/>
+<rect x="780" y="540" width="4" height="250" fill="#00ff41"/>
+<text x="796" y="566" font-size="17" fill="#00ff41" font-weight="700" text-anchor="start">hub</text>
+<rect x="1042" y="552" width="68" height="18" rx="2" fill="none" stroke="#5ad1ff" stroke-width="1"/>
+<text x="1048" y="565" font-size="11" fill="#5ad1ff" font-weight="600" text-anchor="start">tailnet</text>
+<text x="796" y="586" font-size="12" fill="#9fb09f" font-weight="400" text-anchor="start">git, identity and management</text>
+<line x1="796" y1="596" x2="1104" y2="596" stroke="#3d453d"/>
+<text x="796" y="618" font-size="13" fill="#00ff41" font-weight="700" text-anchor="start">›</text>
+<text x="810" y="618" font-size="13" fill="#e4efe4" font-weight="600" text-anchor="start">Forgejo</text>
+<text x="876" y="618" font-size="12" fill="#9fb09f" font-weight="400" text-anchor="start">git, infra as code</text>
+<text x="796" y="637" font-size="13" fill="#00ff41" font-weight="700" text-anchor="start">›</text>
+<text x="810" y="637" font-size="13" fill="#e4efe4" font-weight="600" text-anchor="start">Pocket ID</text>
+<text x="892" y="637" font-size="12" fill="#9fb09f" font-weight="400" text-anchor="start">passkeys, OIDC</text>
+<text x="796" y="656" font-size="13" fill="#00ff41" font-weight="700" text-anchor="start">›</text>
+<text x="810" y="656" font-size="13" fill="#e4efe4" font-weight="600" text-anchor="start">Tinyauth</text>
+<text x="884" y="656" font-size="12" fill="#9fb09f" font-weight="400" text-anchor="start">forward auth</text>
+<text x="796" y="675" font-size="13" fill="#00ff41" font-weight="700" text-anchor="start">›</text>
+<text x="810" y="675" font-size="13" fill="#e4efe4" font-weight="600" text-anchor="start">Homepage</text>
+<text x="884" y="675" font-size="12" fill="#9fb09f" font-weight="400" text-anchor="start">dashboard</text>
+<text x="796" y="694" font-size="13" fill="#00ff41" font-weight="700" text-anchor="start">›</text>
+<text x="810" y="694" font-size="13" fill="#e4efe4" font-weight="600" text-anchor="start">Gatus</text>
+<text x="860" y="694" font-size="12" fill="#9fb09f" font-weight="400" text-anchor="start">uptime checks</text>
+<text x="796" y="713" font-size="13" fill="#00ff41" font-weight="700" text-anchor="start">›</text>
+<text x="810" y="713" font-size="13" fill="#e4efe4" font-weight="600" text-anchor="start">ntfy</text>
+<text x="852" y="713" font-size="12" fill="#9fb09f" font-weight="400" text-anchor="start">push alerts</text>
+<text x="796" y="732" font-size="13" fill="#00ff41" font-weight="700" text-anchor="start">›</text>
+<text x="810" y="732" font-size="13" fill="#e4efe4" font-weight="600" text-anchor="start">Beszel</text>
+<text x="868" y="732" font-size="12" fill="#9fb09f" font-weight="400" text-anchor="start">metrics hub</text>
+<text x="796" y="751" font-size="13" fill="#00ff41" font-weight="700" text-anchor="start">›</text>
+<text x="810" y="751" font-size="13" fill="#e4efe4" font-weight="600" text-anchor="start">Renovate</text>
+<text x="884" y="751" font-size="12" fill="#9fb09f" font-weight="400" text-anchor="start">weekly update PRs</text>
+<text x="796" y="770" font-size="13" fill="#00ff41" font-weight="700" text-anchor="start">›</text>
+<text x="810" y="770" font-size="13" fill="#e4efe4" font-weight="600" text-anchor="start">Ansible</text>
+<text x="876" y="770" font-size="12" fill="#9fb09f" font-weight="400" text-anchor="start">config + patching</text>
+<rect x="60" y="730" width="340" height="170" rx="4" fill="#1c1e1c" stroke="#3d453d" stroke-width="1.2"/>
+<rect x="60" y="730" width="4" height="170" fill="#00ff41"/>
+<text x="76" y="756" font-size="17" fill="#00ff41" font-weight="700" text-anchor="start">psa</text>
+<rect x="330" y="742" width="60" height="18" rx="2" fill="none" stroke="#ffb347" stroke-width="1"/>
+<text x="336" y="755" font-size="11" fill="#ffb347" font-weight="600" text-anchor="start">tunnel</text>
+<text x="76" y="776" font-size="12" fill="#9fb09f" font-weight="400" text-anchor="start">my MSP practice</text>
+<line x1="76" y1="786" x2="384" y2="786" stroke="#3d453d"/>
+<text x="76" y="808" font-size="13" fill="#00ff41" font-weight="700" text-anchor="start">›</text>
+<text x="90" y="808" font-size="13" fill="#e4efe4" font-weight="600" text-anchor="start">ITFlow</text>
+<text x="148" y="808" font-size="12" fill="#9fb09f" font-weight="400" text-anchor="start">PSA, tickets, invoices</text>
+<text x="94" y="827" font-size="12" fill="#9fb09f" font-weight="400" text-anchor="start">Apache + MariaDB</text>
+<text x="76" y="846" font-size="13" fill="#00ff41" font-weight="700" text-anchor="start">›</text>
+<text x="90" y="846" font-size="13" fill="#e4efe4" font-weight="600" text-anchor="start">cloudflared</text>
+<text x="188" y="846" font-size="12" fill="#9fb09f" font-weight="400" text-anchor="start">→ public PSA site</text>
+<text x="94" y="865" font-size="12" fill="#9fb09f" font-weight="400" text-anchor="start">Cloudflare Access in front</text>
+<rect x="420" y="760" width="340" height="150" rx="4" fill="#1c1e1c" stroke="#3d453d" stroke-width="1.2"/>
+<rect x="420" y="760" width="4" height="150" fill="#00ff41"/>
+<text x="436" y="786" font-size="17" fill="#00ff41" font-weight="700" text-anchor="start">vault</text>
+<rect x="682" y="772" width="68" height="18" rx="2" fill="none" stroke="#5ad1ff" stroke-width="1"/>
+<text x="688" y="785" font-size="11" fill="#5ad1ff" font-weight="600" text-anchor="start">tailnet</text>
+<text x="436" y="806" font-size="12" fill="#9fb09f" font-weight="400" text-anchor="start">secrets</text>
+<line x1="436" y1="816" x2="744" y2="816" stroke="#3d453d"/>
+<text x="436" y="838" font-size="13" fill="#00ff41" font-weight="700" text-anchor="start">›</text>
+<text x="450" y="838" font-size="13" fill="#e4efe4" font-weight="600" text-anchor="start">Vaultwarden</text>
+<text x="548" y="838" font-size="12" fill="#9fb09f" font-weight="400" text-anchor="start">passwords</text>
+<text x="454" y="857" font-size="12" fill="#9fb09f" font-weight="400" text-anchor="start">tailnet only, no public name</text>
+<text x="436" y="876" font-size="13" fill="#00ff41" font-weight="700" text-anchor="start">›</text>
+<text x="450" y="876" font-size="13" fill="#e4efe4" font-weight="600" text-anchor="start">Beszel agent</text>
+<text x="556" y="876" font-size="12" fill="#9fb09f" font-weight="400" text-anchor="start">metrics</text>
+<rect x="780" y="805" width="340" height="105" rx="4" fill="#1c1e1c" stroke="#3d453d" stroke-width="1.2"/>
+<rect x="780" y="805" width="4" height="105" fill="#00ff41"/>
+<text x="796" y="831" font-size="17" fill="#00ff41" font-weight="700" text-anchor="start">apps</text>
+<text x="796" y="851" font-size="12" fill="#9fb09f" font-weight="400" text-anchor="start">things I build</text>
+<line x1="796" y1="861" x2="1104" y2="861" stroke="#3d453d"/>
+<text x="796" y="883" font-size="13" fill="#00ff41" font-weight="700" text-anchor="start">›</text>
+<text x="810" y="883" font-size="13" fill="#e4efe4" font-weight="600" text-anchor="start">ChoreCast</text>
+<text x="892" y="883" font-size="12" fill="#9fb09f" font-weight="400" text-anchor="start">household chores app</text>
+<text x="814" y="902" font-size="12" fill="#9fb09f" font-weight="400" text-anchor="start">own repo, Docker Compose</text>
+<rect x="60" y="925" width="1060" height="86" rx="4" fill="#1c1e1c" stroke="#3d453d" stroke-width="1.2"/>
+<text x="76" y="951" font-size="14" fill="#c8ffd4" font-weight="700" text-anchor="start">https://&lt;service&gt;.buenaobra.net</text>
+<text x="376" y="951" font-size="12" fill="#9fb09f" font-weight="400" text-anchor="start">every name → caddy → service · one wildcard certificate</text>
+<text x="76" y="977" font-size="13" fill="#00ff41" font-weight="700" text-anchor="start">›</text>
+<text x="90" y="977" font-size="12" fill="#e4efe4" font-weight="400" text-anchor="start">admin UIs sit behind Pocket ID single sign-on</text>
+<rect x="480" y="964" width="36" height="18" rx="2" fill="none" stroke="#00ff41" stroke-width="1"/>
+<text x="486" y="977" font-size="11" fill="#00ff41" font-weight="600" text-anchor="start">SSO</text>
+<text x="76" y="997" font-size="13" fill="#00ff41" font-weight="700" text-anchor="start">›</text>
+<text x="90" y="997" font-size="12" fill="#e4efe4" font-weight="400" text-anchor="start">names only resolve at home or over Tailscale; nothing is port-forwarded</text>
+<polyline points="670,300 670,316 26,316 26,815 60,815" fill="none" stroke="#ffb347" stroke-width="2" stroke-linejoin="round" stroke-dasharray="7 5"/>
+<rect x="1170" y="470" width="590" height="330" rx="4" fill="#171a17" stroke="#00ff41" stroke-width="1.5" stroke-dasharray="8 5"/>
+<text x="1188" y="500" font-size="20" fill="#00ff41" font-weight="800" text-anchor="start">desktop</text>
+<text x="1296" y="500" font-size="14" fill="#e4efe4" font-weight="600" text-anchor="start">Windows 11 Pro</text>
+<text x="1188" y="522" font-size="12" fill="#9fb09f" font-weight="400" text-anchor="start">daily driver · the media library lives here</text>
+<polyline points="1470,430 1470,470" fill="none" stroke="#00ff41" stroke-width="3" stroke-linejoin="round"/>
+<rect x="1190" y="540" width="270" height="160" rx="4" fill="#1c1e1c" stroke="#3d453d" stroke-width="1.2"/>
+<rect x="1190" y="540" width="4" height="160" fill="#00ff41"/>
+<text x="1206" y="566" font-size="17" fill="#00ff41" font-weight="700" text-anchor="start">media</text>
+<text x="1206" y="586" font-size="12" fill="#9fb09f" font-weight="400" text-anchor="start">native Windows apps</text>
+<line x1="1206" y1="596" x2="1444" y2="596" stroke="#3d453d"/>
+<text x="1206" y="618" font-size="13" fill="#00ff41" font-weight="700" text-anchor="start">›</text>
+<text x="1220" y="618" font-size="13" fill="#e4efe4" font-weight="600" text-anchor="start">Jellyfin</text>
+<text x="1294" y="618" font-size="12" fill="#9fb09f" font-weight="400" text-anchor="start">movies, TV</text>
+<text x="1206" y="637" font-size="13" fill="#00ff41" font-weight="700" text-anchor="start">›</text>
+<text x="1220" y="637" font-size="13" fill="#e4efe4" font-weight="600" text-anchor="start">Navidrome</text>
+<text x="1302" y="637" font-size="12" fill="#9fb09f" font-weight="400" text-anchor="start">music</text>
+<rect x="1470" y="540" width="270" height="160" rx="4" fill="#1c1e1c" stroke="#3d453d" stroke-width="1.2"/>
+<rect x="1470" y="540" width="4" height="160" fill="#00ff41"/>
+<text x="1486" y="566" font-size="17" fill="#00ff41" font-weight="700" text-anchor="start">WSL2</text>
+<text x="1486" y="586" font-size="12" fill="#9fb09f" font-weight="400" text-anchor="start">Ubuntu + Docker</text>
+<line x1="1486" y1="596" x2="1724" y2="596" stroke="#3d453d"/>
+<text x="1486" y="618" font-size="13" fill="#00ff41" font-weight="700" text-anchor="start">›</text>
+<text x="1500" y="618" font-size="13" fill="#e4efe4" font-weight="600" text-anchor="start">ChoreCast</text>
+<text x="1582" y="618" font-size="12" fill="#9fb09f" font-weight="400" text-anchor="start">Android builds</text>
+<text x="1504" y="637" font-size="12" fill="#9fb09f" font-weight="400" text-anchor="start">SDK + adb to TV/phone</text>
+<text x="1486" y="656" font-size="13" fill="#00ff41" font-weight="700" text-anchor="start">›</text>
+<text x="1500" y="656" font-size="13" fill="#e4efe4" font-weight="600" text-anchor="start">dev tools</text>
+<text x="1582" y="656" font-size="12" fill="#9fb09f" font-weight="400" text-anchor="start">git, python</text>
+<rect x="1190" y="710" width="550" height="72" rx="4" fill="#1c1e1c" stroke="#3d453d" stroke-width="1.2"/>
+<rect x="1190" y="710" width="4" height="72" fill="#00ff41"/>
+<text x="1206" y="736" font-size="17" fill="#00ff41" font-weight="700" text-anchor="start">workstation</text>
+<rect x="1662" y="722" width="68" height="18" rx="2" fill="none" stroke="#5ad1ff" stroke-width="1"/>
+<text x="1668" y="735" font-size="11" fill="#5ad1ff" font-weight="600" text-anchor="start">tailnet</text>
+<text x="1206" y="756" font-size="12" fill="#9fb09f" font-weight="400" text-anchor="start">Claude Code · agentwatch (session viewer) · infra repo</text>
+<line x1="1206" y1="766" x2="1724" y2="766" stroke="#3d453d"/>
+<rect x="1170" y="830" width="590" height="200" rx="4" fill="#171a17" stroke="#5ad1ff" stroke-width="1.5" stroke-dasharray="2 4"/>
+<text x="1188" y="860" font-size="20" fill="#5ad1ff" font-weight="800" text-anchor="start">clients</text>
+<text x="1290" y="860" font-size="13" fill="#9fb09f" font-weight="400" text-anchor="start">at home on the LAN, away over Tailscale</text>
+<polyline points="1740,430 1778,430 1778,930 1760,930" fill="none" stroke="#5ad1ff" stroke-width="2" stroke-linejoin="round" stroke-dasharray="2 4"/>
+<text x="1772" y="922" font-size="11" fill="#5ad1ff" font-weight="400" text-anchor="end">Wi-Fi</text>
+<rect x="1190" y="874" width="550" height="32" rx="4" fill="#1c1e1c" stroke="#3d453d" stroke-width="1.2"/>
+<text x="1204" y="896" font-size="13" fill="#e4efe4" font-weight="700" text-anchor="start">TV</text>
+<text x="1400" y="896" font-size="12" fill="#9fb09f" font-weight="400" text-anchor="start">Jellyfin · music</text>
+<rect x="1660" y="883" width="68" height="18" rx="2" fill="none" stroke="#5ad1ff" stroke-width="1"/>
+<text x="1666" y="896" font-size="11" fill="#5ad1ff" font-weight="600" text-anchor="start">tailnet</text>
+<rect x="1190" y="914" width="550" height="32" rx="4" fill="#1c1e1c" stroke="#3d453d" stroke-width="1.2"/>
+<text x="1204" y="936" font-size="13" fill="#e4efe4" font-weight="700" text-anchor="start">phones + tablet</text>
+<text x="1400" y="936" font-size="12" fill="#9fb09f" font-weight="400" text-anchor="start">Jellyfin · music · browser</text>
+<rect x="1660" y="923" width="68" height="18" rx="2" fill="none" stroke="#5ad1ff" stroke-width="1"/>
+<text x="1666" y="936" font-size="11" fill="#5ad1ff" font-weight="600" text-anchor="start">tailnet</text>
+<rect x="1190" y="954" width="550" height="32" rx="4" fill="#1c1e1c" stroke="#3d453d" stroke-width="1.2"/>
+<text x="1204" y="976" font-size="13" fill="#e4efe4" font-weight="700" text-anchor="start">browsers</text>
+<text x="1400" y="976" font-size="12" fill="#9fb09f" font-weight="400" text-anchor="start">dashboard start page</text>
+<rect x="40" y="1060" width="1100" height="190" rx="4" fill="#232623" stroke="#3d453d" stroke-width="1.2"/>
+<text x="58" y="1090" font-size="15" fill="#c8ffd4" font-weight="700" text-anchor="start">How a request gets in</text>
+<rect x="58" y="1112" width="158" height="62" rx="4" fill="#1c1e1c" stroke="#3d453d" stroke-width="1.2"/>
+<text x="137.0" y="1138" font-size="14" fill="#00ff41" font-weight="700" text-anchor="middle">browser</text>
+<text x="137.0" y="1159" font-size="12" fill="#9fb09f" font-weight="400" text-anchor="middle">https://&lt;svc&gt;…</text>
+<polyline points="218,1143 235,1143" fill="none" stroke="#00ff41" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<rect x="238" y="1112" width="158" height="62" rx="4" fill="#1c1e1c" stroke="#3d453d" stroke-width="1.2"/>
+<text x="317.0" y="1138" font-size="14" fill="#00ff41" font-weight="700" text-anchor="middle">AdGuard</text>
+<text x="317.0" y="1159" font-size="12" fill="#9fb09f" font-weight="400" text-anchor="middle">name → caddy</text>
+<polyline points="398,1143 415,1143" fill="none" stroke="#00ff41" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<rect x="418" y="1112" width="158" height="62" rx="4" fill="#1c1e1c" stroke="#3d453d" stroke-width="1.2"/>
+<text x="497.0" y="1138" font-size="14" fill="#00ff41" font-weight="700" text-anchor="middle">Caddy</text>
+<text x="497.0" y="1159" font-size="12" fill="#9fb09f" font-weight="400" text-anchor="middle">TLS, routing</text>
+<polyline points="578,1143 595,1143" fill="none" stroke="#00ff41" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<rect x="598" y="1112" width="158" height="62" rx="4" fill="#1c1e1c" stroke="#00ff41" stroke-width="1.2"/>
+<text x="677.0" y="1138" font-size="14" fill="#00ff41" font-weight="700" text-anchor="middle">Tinyauth</text>
+<text x="677.0" y="1159" font-size="12" fill="#9fb09f" font-weight="400" text-anchor="middle">signed in?</text>
+<polyline points="758,1143 775,1143" fill="none" stroke="#00ff41" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<rect x="778" y="1112" width="158" height="62" rx="4" fill="#1c1e1c" stroke="#00ff41" stroke-width="1.2"/>
+<text x="857.0" y="1138" font-size="14" fill="#00ff41" font-weight="700" text-anchor="middle">Pocket ID</text>
+<text x="857.0" y="1159" font-size="12" fill="#9fb09f" font-weight="400" text-anchor="middle">passkey</text>
+<polyline points="938,1143 955,1143" fill="none" stroke="#00ff41" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<rect x="958" y="1112" width="158" height="62" rx="4" fill="#1c1e1c" stroke="#3d453d" stroke-width="1.2"/>
+<text x="1037.0" y="1138" font-size="14" fill="#00ff41" font-weight="700" text-anchor="middle">service</text>
+<text x="1037.0" y="1159" font-size="12" fill="#9fb09f" font-weight="400" text-anchor="middle">dashboard, etc.</text>
+<text x="58" y="1202" font-size="12" fill="#9fb09f" font-weight="400" text-anchor="start">Away from home the first hop is Tailscale, so the same names work from anywhere I'm signed in.</text>
+<text x="58" y="1224" font-size="12" fill="#9fb09f" font-weight="400" text-anchor="start">Apps with their own OIDC (Gatus, Forgejo, Beszel, Proxmox) sign in with Pocket ID directly.</text>
+<rect x="1170" y="1060" width="590" height="190" rx="4" fill="#232623" stroke="#3d453d" stroke-width="1.2"/>
+<text x="1188" y="1090" font-size="15" fill="#c8ffd4" font-weight="700" text-anchor="start">Keeping it running</text>
+<text x="1188" y="1118" font-size="13" fill="#00ff41" font-weight="700" text-anchor="start">›</text>
+<text x="1202" y="1118" font-size="13" fill="#e4efe4" font-weight="600" text-anchor="start">Ansible</text>
+<text x="1270" y="1118" font-size="12" fill="#9fb09f" font-weight="400" text-anchor="start">config, secrets in Vault, monthly patching</text>
+<text x="1188" y="1139" font-size="13" fill="#00ff41" font-weight="700" text-anchor="start">›</text>
+<text x="1202" y="1139" font-size="13" fill="#e4efe4" font-weight="600" text-anchor="start">unattended-upgrades</text>
+<text x="1366" y="1139" font-size="12" fill="#9fb09f" font-weight="400" text-anchor="start">daily security updates</text>
+<text x="1188" y="1160" font-size="13" fill="#00ff41" font-weight="700" text-anchor="start">›</text>
+<text x="1202" y="1160" font-size="13" fill="#e4efe4" font-weight="600" text-anchor="start">Renovate</text>
+<text x="1278" y="1160" font-size="12" fill="#9fb09f" font-weight="400" text-anchor="start">pinned images, weekly PRs</text>
+<text x="1188" y="1181" font-size="13" fill="#00ff41" font-weight="700" text-anchor="start">›</text>
+<text x="1202" y="1181" font-size="13" fill="#e4efe4" font-weight="600" text-anchor="start">Gatus + Beszel</text>
+<text x="1326" y="1181" font-size="12" fill="#9fb09f" font-weight="400" text-anchor="start">checks and metrics</text>
+<text x="1188" y="1202" font-size="13" fill="#00ff41" font-weight="700" text-anchor="start">›</text>
+<text x="1202" y="1202" font-size="13" fill="#e4efe4" font-weight="600" text-anchor="start">ntfy</text>
+<text x="1246" y="1202" font-size="12" fill="#9fb09f" font-weight="400" text-anchor="start">alerts to my phone, incl. Proxmox</text>
+<text x="1188" y="1223" font-size="13" fill="#00ff41" font-weight="700" text-anchor="start">›</text>
+<text x="1202" y="1223" font-size="13" fill="#e4efe4" font-weight="600" text-anchor="start">Pocket ID</text>
+<text x="1286" y="1223" font-size="12" fill="#9fb09f" font-weight="400" text-anchor="start">one passkey for every admin UI</text>
+</svg>

@@ -84,8 +84,8 @@
 <text x="436" y="586" font-size="12" fill="#9fb09f" font-weight="400" text-anchor="start">the front door</text>
 <line x1="436" y1="596" x2="744" y2="596" stroke="#3d453d"/>
 <text x="436" y="618" font-size="13" fill="#00ff41" font-weight="700" text-anchor="start">›</text>
-<text x="450" y="618" font-size="13" fill="#e4efe4" font-weight="600" text-anchor="start">Caddy</text>
-<text x="500" y="618" font-size="12" fill="#9fb09f" font-weight="400" text-anchor="start">reverse proxy, HTTPS</text>
+<text x="450" y="618" font-size="13" fill="#e4efe4" font-weight="600" text-anchor="start">Traefik</text>
+<text x="516" y="618" font-size="12" fill="#9fb09f" font-weight="400" text-anchor="start">reverse proxy, HTTPS</text>
 <text x="454" y="637" font-size="12" fill="#9fb09f" font-weight="400" text-anchor="start">wildcard cert, Let's Encrypt DNS-01</text>
 <text x="454" y="656" font-size="12" fill="#9fb09f" font-weight="400" text-anchor="start">forward_auth → Tinyauth</text>
 <text x="454" y="675" font-size="12" fill="#9fb09f" font-weight="400" text-anchor="start">LAN + tailnet listener</text>
@@ -260,7 +260,7 @@
 <text x="317.0" y="1209" font-size="12" fill="#9fb09f" font-weight="400" text-anchor="middle">name → caddy</text>
 <polyline points="398,1193 415,1193" fill="none" stroke="#00ff41" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow)"/>
 <rect x="418" y="1162" width="158" height="62" rx="4" fill="#1c1e1c" stroke="#3d453d" stroke-width="1.2"/>
-<text x="497.0" y="1188" font-size="14" fill="#00ff41" font-weight="700" text-anchor="middle">Caddy</text>
+<text x="497.0" y="1188" font-size="14" fill="#00ff41" font-weight="700" text-anchor="middle">Traefik</text>
 <text x="497.0" y="1209" font-size="12" fill="#9fb09f" font-weight="400" text-anchor="middle">TLS, routing</text>
 <polyline points="578,1193 595,1193" fill="none" stroke="#00ff41" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow)"/>
 <rect x="598" y="1162" width="158" height="62" rx="4" fill="#1c1e1c" stroke="#00ff41" stroke-width="1.2"/>

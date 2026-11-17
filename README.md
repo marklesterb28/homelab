@@ -10,7 +10,7 @@ operate it day to day.
 
 - **Proxmox VE host**, one VM per role, Docker Compose inside each:
   - **dns**: AdGuard Home for name resolution and ad blocking
-  - **caddy**: the front door, a reverse proxy with one wildcard certificate
+  - **caddy**: the front door, Traefik as the reverse proxy with one wildcard certificate
     (Let's Encrypt over DNS-01) and forward auth
   - **hub**: Forgejo (git), Pocket ID (passkeys, OIDC), Tinyauth, Homepage,
     Gatus, ntfy, Beszel, Renovate and the Ansible control node
@@ -27,16 +27,16 @@ operate it day to day.
 ## How it's put together
 
 - **Nothing is port-forwarded.** At home, AdGuard answers the service names
-  with Caddy's address. Away from home, my devices join a Tailscale mesh and
+  with the reverse proxy's address. Away from home, my devices join a Tailscale mesh and
   the same `https://` names work. The only public entry points are the PSA
   (behind Cloudflare Access) and the radio (admin pages behind Access), each
   through its own Cloudflare Tunnel.
-- **One passkey for everything.** Admin UIs sit behind Pocket ID: Caddy asks
+- **One passkey for everything.** Admin UIs sit behind Pocket ID: Traefik asks
   Tinyauth on every request, and apps with their own OIDC support (Gatus,
   Forgejo, Beszel, Proxmox) sign in with Pocket ID directly.
 - **Least privilege on the mesh.** Tailscale grants allow only what's needed,
   and the policy's tests block any change that would open more.
-- **Everything as code.** Compose files, the Caddy config and Ansible
+- **Everything as code.** Compose files, the Traefik routes and Ansible
   playbooks live in a private repo on Forgejo. Secrets sit in Ansible Vault,
   never in plain text.
 

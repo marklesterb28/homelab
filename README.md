@@ -20,7 +20,7 @@ operate it day to day.
   - **apps**: ChoreCast, an app I build
   - **radio**: SUB/WAVE, a 24/7 radio station for the family that plays my
     Navidrome library with an AI DJ (a free cloud LLM writes, a local voice
-    speaks)
+    speaks), public through a Cloudflare Tunnel
 - **Windows desktop**: Jellyfin and Navidrome as native apps, plus WSL2 for
   Android builds
 
@@ -28,8 +28,9 @@ operate it day to day.
 
 - **Nothing is port-forwarded.** At home, AdGuard answers the service names
   with Caddy's address. Away from home, my devices join a Tailscale mesh and
-  the same `https://` names work. The only public entry point is the PSA,
-  through a Cloudflare Tunnel behind Access.
+  the same `https://` names work. The only public entry points are the PSA
+  (behind Cloudflare Access) and the radio (admin pages behind Access), each
+  through its own Cloudflare Tunnel.
 - **One passkey for everything.** Admin UIs sit behind Pocket ID: Caddy asks
   Tinyauth on every request, and apps with their own OIDC support (Gatus,
   Forgejo, Beszel, Proxmox) sign in with Pocket ID directly.
